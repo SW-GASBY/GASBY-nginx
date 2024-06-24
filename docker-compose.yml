@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  nginx:
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      - yolo_model_1
+      - yolo_model_2
+      - yolo_model_3
+      - yolo_model_4
+      - mlflow
+
+  yolo_model_1:
+    image: flask-app
+    ports:
+      - "4001:4001"
+
+  yolo_model_2:
+    image: flask-app
+    ports:
+      - "4002:4002"
+
+  yolo_model_3:
+    image: flask-app
+    ports:
+      - "4003:4003"
+
+  yolo_model_4:
+    image: flask-app
+    ports:
+      - "4004:4004"
+
+  mlflow:
+    image: flask-app
+    ports:
+      - "5001:5001"

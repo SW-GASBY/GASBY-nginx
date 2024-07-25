@@ -28,7 +28,10 @@ L7 영역의 로드밸런서 역할을 합니다. MlOps에 필요한 모델 컨�
 Streamlit을 사용하여 대화형 웹 애플리케이션을 구축하는 과정은 간단합니다. 아래 단계에 따라 Streamlit을 설치하고 기본적인 애플리케이션을 실행할 수 있습니다.
 
 ```bash
-docker run -d -p 8081:8081 --name nginx-container nginx
+docker build -t nginx-bing .
+docker push nginx-bing
+docker pull nginx-bing
+docker run -d -p 8081:8081 nginx-bing
 ```
 
 
